@@ -1,0 +1,12 @@
+[Unit]
+Description=Local Tunneling via Ngrok
+After=multi-user.target
+
+[Service]
+User=boss
+Type=simple
+ExecStart=ngrok start --all
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

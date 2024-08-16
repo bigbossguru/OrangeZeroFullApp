@@ -1,0 +1,10 @@
+version: "2"
+authtoken: changeme
+tunnels:
+  cockpit:
+    proto: http
+    addr: https://localhost:9090
+  app:
+    proto: http
+    addr: 8000
+

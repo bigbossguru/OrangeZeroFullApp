@@ -1,0 +1,13 @@
+[Unit]
+Description=Telegram Bot
+After=multi-user.target
+
+[Service]
+User=boss
+Type=simple
+WorkingDirectory=/home/boss/dev/OrangeZeroFullApp/telegram_bot
+ExecStart=/home/boss/dev/OrangeZeroFullApp/telegram_bot/.venv/bin/python3 bot.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,17 @@
+server {
+    listen 8000;
+    server_name localhost;
+    
+    proxy_read_timeout 300;
+    proxy_connect_timeout 300;
+    proxy_send_timeout 300;
+
+    location / {
+        root /home/boss/dev/react-build-site/build;
+    }
+
+    location /api/ {
+        proxy_pass http://unix:/run/gunicorn.sock;
+    }
+
+}
