@@ -7,7 +7,7 @@ server {
     proxy_send_timeout 300;
 
     location / {
-        root /home/boss/dev/react-build-site/build;
+        root /home/boss/dev/OrangeZeroFullApp/frontend/build;
     }
 
     location /api/ {
