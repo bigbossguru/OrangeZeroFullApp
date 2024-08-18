@@ -1,5 +1,5 @@
 version: "2"
-authtoken: 2XLmEcwmhMUwupSCLv7pJhkpMFm_2HA34eD3ASg29sqLggvEh
+authtoken: changeme
 tunnels:
   cockpit:
     proto: http
@@ -7,4 +7,3 @@ tunnels:
   app:
     proto: http
     addr: 8000
-

@@ -13,8 +13,10 @@ poetry install --sync --no-root
 make create-gunicorn-socket
 make create-gunicorn-service
 make run-gunicorn-server
+make restart-gunicorn
 
 cd ..
+echo
 
 # Configuration Nginx
 cd ./nginx
@@ -24,6 +26,7 @@ make config-nginx-proxy
 make restart-nginx
 
 cd ..
+echo
 
 # Configuration Ngrok
 cd ./ngrok
@@ -32,8 +35,10 @@ pwd
 make create-service
 make config-ngrok
 make run-service
+make restart-service
 
 cd ..
+echo
 
 # Create Telegram Bot
 cd ./telegram_bot
@@ -42,7 +47,9 @@ pwd
 poetry install --sync --no-root
 make create-service
 make run-service
+make restart-service
 
 cd ..
+echo
 pwd
 echo "Finished"

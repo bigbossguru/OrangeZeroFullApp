@@ -15,9 +15,10 @@ create-gunicorn-service:
 	sudo cp services/gunicorn.service /etc/systemd/system/gunicorn.service
 
 run-gunicorn-server:
+	sudo systemctl daemon-reload
 	sudo systemctl start gunicorn.socket
 	sudo systemctl enable gunicorn.socket
-	curl --unix-socket /run/gunicorn.sock localhost
+	# curl --unix-socket /run/gunicorn.sock localhost
 
 restart-gunicorn:
 	sudo systemctl restart gunicorn.socket

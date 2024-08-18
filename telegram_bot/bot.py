@@ -9,9 +9,10 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
 from dotenv import load_dotenv
 
 
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parent
+load_dotenv(BASE_DIR / ".env")
 
-logs_dir_path = Path(__file__).parent / "logs"
+logs_dir_path = BASE_DIR / "logs"
 logs_dir_path.mkdir(exist_ok=True)
 
 logging.basicConfig(
@@ -39,7 +40,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def magic_url(update: Update, context: ContextTypes.DEFAULT_TYPE):
     urls_info = "Debug Mode"
-    if not bool(os.environ["DEBUG"]):
+    if True:
         data = await fetch("http://localhost:4040/api/tunnels")
         urls_info = "\n".join(
             f"{url['name']}: {url['public_url']}" for url in data["tunnels"]
