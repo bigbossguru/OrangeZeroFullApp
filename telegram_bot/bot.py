@@ -39,12 +39,14 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 async def magic_url(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    urls_info = "Debug Mode"
-    if True:
+    try:
         data = await fetch("http://localhost:4040/api/tunnels")
         urls_info = "\n".join(
             f"{url['name']}: {url['public_url']}" for url in data["tunnels"]
         )
+    except:
+        urls_info = "Debug Mode or Ngrok service unavailable"
+
     await context.bot.send_message(
         chat_id=update.effective_chat.id,
         text=urls_info,
