@@ -20,5 +20,5 @@ remove-service:
 	sudo rm -rf /etc/systemd/system/ngroktunnel.service
 
 config-ngrok:
-	sudo rm -rf /home/boss/.config/ngrok.yml
-	sudo cp ngrok.yml /home/boss/.config/ngrok.yml
+	sudo rm -rf /home/boss/.config/ngrok/ngrok.yml
+	sudo cp ngrok.yml /home/boss/.config/ngrok/ngrok.yml
